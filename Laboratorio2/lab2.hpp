@@ -156,7 +156,16 @@ template <typename a, typename b, typename f_b_a_b>
     && std::convertible_to<f_b_a_b,std::function<b(b, a)>>
 b reduceLeft(f_b_a_b f, b init, List<a> const& xs )
   {
-  }
+    b acc = init; 
+    List<a> actual = xs; 
+    while (!actual.isEmpty()) 
+    {
+        acc = f(acc, actual.head()); 
+        actual = actual.tail(); 
+    }
+    return acc; 
+}
+  
 
 template <typename a, typename b, typename f_b_a_b>
   requires std::invocable<f_b_a_b, b, a>
