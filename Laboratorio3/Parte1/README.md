@@ -50,20 +50,20 @@ Todas las preguntas asumen que A es un árbol binario de búsqueda.
 Marque con una X solo las que son verdaderas. A veces puede haber más de una o ninguna.
 
 P Para todo h ∈ H(A)
--[ ] L(h) es menor que M(A)
--[ ] L(h) es menor o igual a M(A)
--[ ] M(A) es menor o igual a L(h)
--[ ] M(A) es igual a L(h)
+- [ ] L(h) es menor que M(A)
+- [ ] L(h) es menor o igual a M(A)
+- [ ] M(A) es menor o igual a L(h)
+- [ ] M(A) es igual a L(h)
 
 Usamos la notación | C | para denotar la cardinalidad de un conjunto C.
 Por ejemplo, a partir de las definiciones arriba, deben inferir que | A | es el número de nodos de A.
 
 P Para todo A
--[ ] |A| = 2 * |H(A)|
--[ ] |A| = 2 * |H(A)| - 1
--[ ] |H(A)| < |A - H(A)|
--[ ] |A - H(A)| < |H(A)|
--[ ] |H(A)| < |A|
+- [ ] |A| = 2 * |H(A)|
+- [ ] |A| = 2 * |H(A)| - 1
+- [ ] |H(A)| < |A - H(A)|
+- [ ] |A - H(A)| < |H(A)|
+- [ ] |H(A)| < |A|
 
 Sea x un valor a buscar en A.
 Dado un nodo n, denotamos el valor de n de esta manera: v(n).
@@ -78,18 +78,18 @@ En lenguaje natural, dado un nodo n:
 - todos los valores en el subárbol derecho de n son mayores del valor de n
 
 P Sea n ∈ A entonces
--[ ] M(lhs(n)) < M(rhs(n))
--[ ] M(lhs(n)) = M(rhs(n))
--[ ] M(A(n)) = M(lhs(n)) + M(rhs(n))
--[ ] M(A(n)) = 1 + max(M(lhs(n)), M(rhs(n)))
+- [ ] M(lhs(n)) < M(rhs(n))
+- [ ] M(lhs(n)) = M(rhs(n))
+- [ ] M(A(n)) = M(lhs(n)) + M(rhs(n))
+- [ ] M(A(n)) = 1 + max(M(lhs(n)), M(rhs(n)))
 
 
 P Sea x un valor a buscar en A que de hecho se encuentra en A, aunque no sabemos de antemano.
 Y sea c el número de comparaciones a realizar para conseguir x en el árbol A. Entonces tenemos:
--[ ] c <= |A|
--[ ] c <= M(A)
--[ ] existe un h tal que c < L(h) donde h ∈ H(A)
--[ ] existe un h tal que c = L(h) donde h ∈ H(A)
+- [ ] c <= |A|
+- [ ] c <= M(A)
+- [ ] existe un h tal que c < L(h) donde h ∈ H(A)
+- [ ] existe un h tal que c = L(h) donde h ∈ H(A)
 
 Un árbol binario de búsqueda está balanceado si, para todo nodo n, se cumple:
 
@@ -114,17 +114,17 @@ obviamente, otra forma de decir que los Macondianos de los subárboles no difier
    M(lhs(n)) = M(rhs(n))
 
 P Sea A un árbol binario de búsqueda perfectamente balanceado. Entonces,
--[ ] ∀  h ∈  H(A) , L(h) = M(A)
--[ ] ∀  h ∈  H(A) , L(h) = 1 + M(A)
--[ ] ∀  h ∈  H(A) existe un k ∈ H(A), donde h ≠ k, tal que L(h) ≠ L(k)
--[ ] ∀  h ∈  H(A) y ∀  k ∈  H(A), donde h ≠ k, L(h) = L(k)
+- [ ] ∀  h ∈  H(A) , L(h) = M(A)
+- [ ] ∀  h ∈  H(A) , L(h) = 1 + M(A)
+- [ ] ∀  h ∈  H(A) existe un k ∈ H(A), donde h ≠ k, tal que L(h) ≠ L(k)
+- [ ] ∀  h ∈  H(A) y ∀  k ∈  H(A), donde h ≠ k, L(h) = L(k)
 
 P  Sea A un árbol binario de búsqueda perfectamente balanceado y
 sean h ∈ H(A) y k ∈ H(A), donde h ≠ k, entonces
--[ ] L(h) = L(k)
--[ ] L(h) ≠ L(k)
--[ ] Siempre existe un k tal que L(h) = L(k)
--[ ] Siempre existe un k tal que L(h) ≠ L(k)
+- [ ] L(h) = L(k)
+- [ ] L(h) ≠ L(k)
+- [ ] Siempre existe un k tal que L(h) = L(k)
+- [ ] Siempre existe un k tal que L(h) ≠ L(k)
 
 ## Premium
 
