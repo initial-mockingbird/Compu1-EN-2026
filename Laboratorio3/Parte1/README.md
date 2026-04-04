@@ -51,7 +51,7 @@ Marque con una X solo las que son verdaderas. A veces puede haber más de una o 
 
 P Para todo h ∈ H(A)
 - [ ] L(h) es menor que M(A)
-- [ ] L(h) es menor o igual a M(A)
+- [x] L(h) es menor o igual a M(A)
 - [ ] M(A) es menor o igual a L(h)
 - [ ] M(A) es igual a L(h)
 
@@ -81,13 +81,13 @@ P Sea n ∈ A entonces
 - [ ] M(lhs(n)) < M(rhs(n))
 - [ ] M(lhs(n)) = M(rhs(n))
 - [ ] M(A(n)) = M(lhs(n)) + M(rhs(n))
-- [ ] M(A(n)) = 1 + max(M(lhs(n)), M(rhs(n)))
+- [x] M(A(n)) = 1 + max(M(lhs(n)), M(rhs(n)))
 
 
 P Sea x un valor a buscar en A que de hecho se encuentra en A, aunque no sabemos de antemano.
 Y sea c el número de comparaciones a realizar para conseguir x en el árbol A. Entonces tenemos:
-- [ ] c <= |A|
-- [ ] c <= M(A)
+- [x] c <= |A|
+- [x] c <= M(A)
 - [ ] existe un h tal que c < L(h) donde h ∈ H(A)
 - [ ] existe un h tal que c = L(h) donde h ∈ H(A)
 
@@ -114,14 +114,14 @@ obviamente, otra forma de decir que los Macondianos de los subárboles no difier
    M(lhs(n)) = M(rhs(n))
 
 P Sea A un árbol binario de búsqueda perfectamente balanceado. Entonces,
-- [ ] ∀  h ∈  H(A) , L(h) = M(A)
+- [x] ∀  h ∈  H(A) , L(h) = M(A)
 - [ ] ∀  h ∈  H(A) , L(h) = 1 + M(A)
 - [ ] ∀  h ∈  H(A) existe un k ∈ H(A), donde h ≠ k, tal que L(h) ≠ L(k)
-- [ ] ∀  h ∈  H(A) y ∀  k ∈  H(A), donde h ≠ k, L(h) = L(k)
+- [x] ∀  h ∈  H(A) y ∀  k ∈  H(A), donde h ≠ k, L(h) = L(k)
 
 P  Sea A un árbol binario de búsqueda perfectamente balanceado y
 sean h ∈ H(A) y k ∈ H(A), donde h ≠ k, entonces
-- [ ] L(h) = L(k)
+- [x] L(h) = L(k)
 - [ ] L(h) ≠ L(k)
 - [ ] Siempre existe un k tal que L(h) = L(k)
 - [ ] Siempre existe un k tal que L(h) ≠ L(k)
@@ -134,3 +134,24 @@ como 2 preguntas de esta seccion.
 
 P  Sea A un árbol binario de búsqueda perfectamente balanceado y sea m = M(A).
 Intente conseguir una fórmula que computa |A| a partir de m. Demuestre como la derivo.
+R  **Fórmula:**
+$$|A| = 2^ {(m+1)}- 1$$
+
+**Demostración:**
+Dado que $A$ es un árbol perfectamente balanceado, para todo nodo $n$ se cumple que el Macondiano de sus subárboles es igual: $M(lhs(n)) = M(rhs(n))$. Esto implica que el árbol es un árbol binario perfecto, por lo que está completamente lleno en todos y cada uno de sus niveles.
+
+Podemos contabilizar el número de nodos que existen por nivel:
+* Nivel 1 (raíz): $2^0 = 1$ nodo.
+* Nivel 2: $2^1 = 2$ nodos.
+* Nivel 3: $2^2 = 4$ nodos.
+* ...
+* Nivel $m$: $2^m$ nodos.
+
+Como el Macondiano es $m = M(A)$, el árbol tiene exactamente $m$ niveles. La cardinalidad $|A|$ es simplemente la suma total de los nodos en todos los niveles, desde $1$ hasta $m$:
+
+$$|A| = 2^0 + 2^1 + 2^2 + \dots + 2^m$$
+
+Esta expresión es la suma de los términos de una progresión geométrica. Si aplicamos la fórmula estándar para la suma de las potencias de 2 (donde la suma desde $2^0$ hasta $2^k$ es igual a $2^{k+1} - 1$), obtenemos directamente el resultado:
+
+$$|A| = 2^{(m+1)} - 1$$
+                                                                                                                             
